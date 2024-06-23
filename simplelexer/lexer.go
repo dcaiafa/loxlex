@@ -1,4 +1,4 @@
-package baselexer
+package simplelexer
 
 import (
 	"bytes"
