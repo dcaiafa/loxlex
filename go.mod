@@ -1,3 +1,3 @@
-module github.com/dcaiafa/lox_lexer
+module github.com/dcaiafa/loxlex
 
 go 1.18
