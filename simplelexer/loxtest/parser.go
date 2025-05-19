@@ -3,7 +3,7 @@ package loxtest
 import (
 	gotoken "go/token"
 
-	baselexer "github.com/dcaiafa/lox_lexer/simplelexer"
+	baselexer "github.com/dcaiafa/loxlex/simplelexer"
 )
 
 func Parse(fset *gotoken.FileSet, expr string) []Token {

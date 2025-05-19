@@ -1,9 +1,5 @@
 package loxtest
 
-import (
-	_i0 "github.com/dcaiafa/lox_lexer/simplelexer"
-)
-
 var _rules = []int32{
 	0, 1, 2, 2, 2, 3, 3, 4, 4,
 }
@@ -226,35 +222,35 @@ func (p *parser) _act(prod int32) any {
 	switch prod {
 	case 1:
 		return p.on_S(
-			_cast[[]_i0.Token](p._stack.Peek(0).Sym),
+			_cast[[]Token](p._stack.Peek(0).Sym),
 		)
 	case 2:
 		return p.on_token(
-			_cast[_i0.Token](p._stack.Peek(0).Sym),
+			_cast[Token](p._stack.Peek(0).Sym),
 		)
 	case 3:
 		return p.on_token(
-			_cast[_i0.Token](p._stack.Peek(0).Sym),
+			_cast[Token](p._stack.Peek(0).Sym),
 		)
 	case 4:
 		return p.on_token__err(
 			_cast[Error](p._stack.Peek(0).Sym),
 		)
 	case 5: // ZeroOrMore
-		return _cast[[]_i0.Token](p._stack.Peek(0).Sym)
+		return _cast[[]Token](p._stack.Peek(0).Sym)
 	case 6: // ZeroOrMore
 		{
-			var zero []_i0.Token
+			var zero []Token
 			return zero
 		}
 	case 7: // OneOrMore
 		return append(
-			_cast[[]_i0.Token](p._stack.Peek(1).Sym),
-			_cast[_i0.Token](p._stack.Peek(0).Sym),
+			_cast[[]Token](p._stack.Peek(1).Sym),
+			_cast[Token](p._stack.Peek(0).Sym),
 		)
 	case 8: // OneOrMore
-		return []_i0.Token{
-			_cast[_i0.Token](p._stack.Peek(0).Sym),
+		return []Token{
+			_cast[Token](p._stack.Peek(0).Sym),
 		}
 	default:
 		panic("unreachable")

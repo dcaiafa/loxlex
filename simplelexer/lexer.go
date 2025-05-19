@@ -57,6 +57,13 @@ type Token struct {
 	Err  error
 }
 
+// Discard indicates to the parser that tokens should be discarded when using
+// the *! cardinality. This is useful when you want to discard new-lines,
+// comments, etc. at the parser level.
+func (t Token) Discard() bool {
+	return true
+}
+
 // Config configures a Lexer.
 type Config struct {
 	// StateMachine is the Lox-generated state machine.

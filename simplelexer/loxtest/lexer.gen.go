@@ -110,6 +110,9 @@ func (l *_LexerStateMachine) PushRune(r rune) int {
 			l.modeStack.Push(mode)
 			l.mode = _lexerModes[modeIndex]
 		case 2: // PopMode
+			if len(l.modeStack) == 0 {
+				return _lexerError
+			}
 			l.mode = l.modeStack.Peek(0)
 			l.modeStack.Pop(1)
 		case 3: // Accept
