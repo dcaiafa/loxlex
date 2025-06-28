@@ -168,7 +168,7 @@ func (l *Lexer) ReadToken() (Token, int) {
 
 			// Read until the beginning of the next line.
 			// TODO: allow custom recovery.
-			for l.char != '\n' && l.char != 0 {
+			for l.char != '\n' && l.char != -1 {
 				l.consume()
 			}
 			l.consume()
@@ -187,7 +187,7 @@ func (l *Lexer) consume() {
 	l.offset += l.charLen
 	r, charLen, err := l.inputReader.ReadRune()
 	if err != nil {
-		l.char = 0
+		l.char = -1
 		l.charLen = 0
 		return
 	}
